@@ -1,3 +1,25 @@
+/*
+Given a string 's' consisting of upper case alphabets, i.e. from 'A' to 'Z'. Your task is to find how many strings 't' with length equal to that of 's', also consisting of upper case alphabets are there satisfying the following conditions:
+-> String 't' is lexicographical larger than string 's'.
+-> When you write both 's' and 't' in the reverse order, 't' is still lexicographical larger than 's'.
+Find out number of such strings 't'. As the answer could be very large, take modulo 10^9 + 7.
+Input Format:
+The first and only line of input contains the string s.
+Output Format:
+Output the number of strings (t) %(10^9 + 7) in new line.
+Constraints:
+1 <= |S| <= 10^5
+Sample Input 1:
+A
+Sample Output 1:
+25
+Sample Input 2:
+XKS
+Sample Output 2:
+523
+
+*/
+
 #define mod 1000000007
 #define ll long long int
 #include<string>
@@ -28,3 +50,9 @@ int countStrings(char *s)
     return ans;
 }
 
+int main(){
+	char s[100005];
+    cin>>s;
+    int ans = countStrings(s);
+    cout<<ans<<endl;
+}
