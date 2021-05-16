@@ -13,7 +13,12 @@ int maxProfit(int *arr, int n){
 			maxPrice = arr[i];
 		}
 		
-		profit[i] = max(profit[i+1], maxPrice-arr[i]);
+		if(profit[i+1] >  maxPrice-arr[i]){
+      		profit[i] = profit[i+1];
+		}
+		else{
+     		profit[i] = maxPrice-arr[i];
+		}
 	}
 	
 	int minPrice = arr[0];
@@ -21,7 +26,13 @@ int maxProfit(int *arr, int n){
 		if(arr[i]<minPrice){
 			maxPrice = arr[i];
 		}
-		profit[i] = max(profit[i-1], profit[i]+ (arr[i] - minPrice));
+		if(profit[i-1] > profit[i]+ (arr[i] - minPrice){
+      		profit[i] = profit[i-1];
+		}
+		else{
+     		profit[i] = profit[i]+ (arr[i] - minPrice;
+		}
+		
 	}
 	return profit[n-1];
 	
