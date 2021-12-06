@@ -2,7 +2,7 @@
 using namespace std;
 
 const int ALPHABET_SIZE = 26;
-
+//Trie Data Structure
 struct TrieNode{
 	struct TrieNode *children[ALPHABET_SIZE];
 	bool isEndOfWord;
